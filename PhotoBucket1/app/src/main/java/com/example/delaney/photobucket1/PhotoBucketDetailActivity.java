@@ -1,5 +1,6 @@
 package com.example.delaney.photobucket1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class PhotoBucketDetailActivity extends AppCompatActivity {
+
+    private TextView mCaptionTextView;
+    private TextView mImageurlTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +23,15 @@ public class PhotoBucketDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo_bucket_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mCaptionTextView = findViewById(R.id.detail_caption);
+        mImageurlTextView = findViewById(R.id.detail_imageurl);
+
+
+        Intent receivedIntent = getIntent();
+        String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
+
+        // Temp test
+        mImageurlTextView.setText(docId);    // This proves that we clicked it
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
