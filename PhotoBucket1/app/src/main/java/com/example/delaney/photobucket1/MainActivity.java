@@ -26,6 +26,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 Map<String, Object> pb = new HashMap<>();
                 pb.put(Constants.KEY_CAPTION, captionEditText.getText().toString());
                 pb.put(Constants.KEY_IMAGEURL, imageurlEditText.getText().toString());
-                pb.put(Constants.KEY_CREATED, imageurlEditText.getText().toString());
+                pb.put(Constants.KEY_CREATED, new Date());
 
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(pb);
             }
