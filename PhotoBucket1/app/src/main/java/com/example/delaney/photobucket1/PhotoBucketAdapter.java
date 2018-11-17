@@ -1,5 +1,7 @@
 package com.example.delaney.photobucket1;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -54,6 +56,8 @@ public class PhotoBucketAdapter extends RecyclerView.Adapter<PhotoBucketAdapter.
         String caption = (String)ds.get(Constants.KEY_CAPTION);
         String imageurl = (String)ds.get(Constants.KEY_IMAGEURL);
         photoBucketViewHolder.mCaptionTextView.setText(caption);
+        photoBucketViewHolder.mImageurlTextView.setText(imageurl);
+
     }
 
     @Override
@@ -63,10 +67,25 @@ public class PhotoBucketAdapter extends RecyclerView.Adapter<PhotoBucketAdapter.
 
     class PhotoBucketViewHolder extends RecyclerView.ViewHolder {
         private TextView mCaptionTextView;
+        private TextView mImageurlTextView;
 
-        public PhotoBucketViewHolder(@NonNull View itemView) {
+        public PhotoBucketViewHolder(@NonNull final View itemView) {
             super(itemView);
             mCaptionTextView = itemView.findViewById(R.id.itemview_caption);
+            mImageurlTextView = itemView.findViewById(R.id.itemview_imageurl);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context c = view.getContext();
+
+
+                    Intent intent = new Intent(c, PhotoBucketDetailActivity.class);
+                    c.startActivity(intent);
+
+
+                }
+            });
+
         }
     }
 }
