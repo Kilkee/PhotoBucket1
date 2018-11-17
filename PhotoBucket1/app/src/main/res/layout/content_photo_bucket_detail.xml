@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,30 +19,34 @@
     tools:context=".PhotoBucketDetailActivity"
     tools:showIn="@layout/activity_photo_bucket_detail">
 
+    <TextView
+        android:id="@+id/detail_imageurl"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <ImageView
+        android:id="@+id/detail_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
 
     <TextView
         android:id="@+id/detail_caption"
         android:text="Caption goes here"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:layout_margin="20dp"
+        android:layout_marginTop="550dp"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        />
 
-
-    <TextView
-        android:id="@+id/detail_imageurl"
-        android:text="Quote goes here"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-
-
-
-</LinearLayout>
+    </RelativeLayout>
