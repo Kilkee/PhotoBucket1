@@ -58,12 +58,12 @@ public class PhotoBucketDetailActivity extends AppCompatActivity {
 
                 }
                 if (documentSnapshot.exists()) {      //Check to make sure the document exists
-                    mDocSnapshot = documentSnapshot;            // Save documentSnapshot as mDocSnapshot
+                    mDocSnapshot = documentSnapshot;            // Save documentSnapshot as mDocSnapshot so that he can use it in other places as well
                     mCaptionTextView.setText((String) documentSnapshot.get(Constants.KEY_CAPTION));  //Sets mCaptionTextView to a string value of Key_CAPTION
 
                   //  mImageurlTextView.setText((String) documentSnapshot.get(Constants.KEY_IMAGEURL)); //Sets mImageurlTextView to a string value of KEY_IMAGEURL
 
-                         Ion.with(mImageView).load((String)documentSnapshot.get("imageurl"));    //*******
+                         Ion.with(mImageView).load((String)documentSnapshot.get("imageurl"));    //sets mImageView to a string version of "imageurl"
                 }
             }
 
@@ -95,7 +95,9 @@ public class PhotoBucketDetailActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_delete:
 
-                //TODO: Delete this caption and close this activity
+
+                mDocRef.delete();     //delete Photos
+                finish();
                 return true;
 
 
