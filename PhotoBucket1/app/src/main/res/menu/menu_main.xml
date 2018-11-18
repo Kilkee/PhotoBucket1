@@ -8,5 +8,5 @@
         android:orderInCategory="100"
         android:title="Delete"
         android:icon="@android:drawable/ic_menu_delete"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 </menu>

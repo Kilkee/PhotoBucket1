@@ -56,7 +56,7 @@ public class PhotoBucketAdapter extends RecyclerView.Adapter<PhotoBucketAdapter.
         String caption = (String)ds.get(Constants.KEY_CAPTION);
         String imageurl = (String)ds.get(Constants.KEY_IMAGEURL);
         photoBucketViewHolder.mCaptionTextView.setText(caption);
-        photoBucketViewHolder.mImageurlTextView.setText(imageurl);
+      //  photoBucketViewHolder.mImageurlTextView.setText(imageurl);   // No need to display the url in the adapter window
 
     }
 

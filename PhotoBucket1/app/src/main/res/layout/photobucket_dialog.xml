@@ -15,7 +15,7 @@
 
     <EditText
         android:id="@+id/dialog_imageurl_edittext"
-        android:hint="Enter an image url  here"
+        android:hint="imageurl goes here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
